@@ -6,14 +6,16 @@
 </button>
 <div class="panel">
     <p>{{text}}</p>
+    {{!-- <div>
+        <form class="new-comment-form">
+            <textarea id="new-comment" maxlength="500"></textarea>
+            <button class="add-comment-btn" type="submit">Leave a Comment</button>
+        </form>
+    </div> --}}
+
 </div>
 {{/each}}
-{{#if logged_in}}
-<form class="new-comment-form">
-    <textarea id="new-comment" maxlength="500"></textarea>
-    <button class="add-comment-btn" type="submit">Leave a Comment</button>
-</form>
-{{/if}}
+{{#unless logged_in}}
 <div class="login-card">
     <h2 class="login-title">Signup</h2>
     <form class="form signup-form">
@@ -41,12 +43,13 @@
 <div id="already-logged">
     <p>Already a member? <a href="/login">Log In</a></p>
 </div>
+{{/unless}}
 <div>
-
 </div>
 <div>
-
 </div>
-
+{{!--
+<script src="/utils/helper.js"></script> --}}
 <script src="/js/homepage.js"></script>
 <script src="/js/signup.js"></script>
+<script src="/js/comment.js"></script>

@@ -2,7 +2,7 @@ const logoutFormHandler = async (event) => {
     event.preventDefault();
 
     try {
-        const response = await fetch("/api/users/logout", {
+        const response = await fetch("/api/user/logout", {
             method: "POST",
             headers: { "Content-Type": "application/json" }
         });
@@ -22,10 +22,4 @@ const logoutFormHandler = async (event) => {
         alert('An error occurred while logging out.');
     }
 };
-function clicker(e) {
-    const text = document.getElementById('blog-text');
-    console.log(text)
-    if (text) {
-        text.style.display = "block"
-    }
-}
+document.getElementById('logout')?.addEventListener('click', logoutFormHandler)

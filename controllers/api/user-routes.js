@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models/user');
+const { User } = require('../../models');
 const withAuth = require("../../utils/auth");
 // signup new user
 router.post('/', async (req, res) => {
@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
             console.log(req.session.logged_in)
             res.status(200).json(dbUserData);
         });
+        alert("User Created")
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -54,19 +55,20 @@ router.post('/login', async (req, res) => {
             res.json({ user: dbUserData, message: 'You are logged in' })
 
         });
+        alert("Logged In")
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 router.post('/logout', (req, res) => {
-
     if (req.session.logged_in) {
-        console.log(req.session, 'made it here ');
+        console.log(req.session);
         req.session.destroy(() => {
             res.status(204).end();
 
         });
+        alert("Logged Out")
     } else {
         res.status(404).end();
         console.log(req.session);

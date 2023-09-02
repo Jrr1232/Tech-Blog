@@ -1,19 +1,21 @@
 <link rel="stylesheet" href="css/jass.css">
 {{#each blogs}}
+
 <button class="accordion">
     <div id="title">{{title}}</div>
     <div id="posted-date">Posted By: {{user.username}} on {{datePosted}}</div>
+    <div id="blog-text">
+        <p>{{text}}</p>
+    </div>
 </button>
 <div class="panel">
-    <p>{{text}}</p>
-    {{!-- <div>
-        <form class="new-comment-form">
-            <textarea id="new-comment" maxlength="500"></textarea>
-            <button class="add-comment-btn" type="submit">Leave a Comment</button>
-        </form>
-    </div> --}}
-
+    <div id="comments-panel">Comments{{comments.text}}</div>
+    <form class="new-comment-form">
+        <textarea class="new-comment" maxlength="500"></textarea>
+        <button class="add-comment-btn" type="submit">Leave a Comment</button>
+    </form>
 </div>
+
 {{/each}}
 {{#unless logged_in}}
 <div class="login-card">

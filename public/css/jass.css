@@ -55,8 +55,14 @@ ul li a {
 
 }
 
+#first-tab {
+    margin-bottom: 20px;
+}
+
 .accordion {
-    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    display: flexbox;
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -66,13 +72,27 @@ ul li a {
     border: none;
     outline: none;
     transition: 0.4s;
-    margin-top: 30px;
+    margin-top: 5px;
+}
+
+#blog-text {
+    font-family: monospace;
+    border-top: 2px solid brown;
+    margin-top: 50px;
+    height: 100px;
+}
+
+#comments-panel {
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: large;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .accordion:hover {
     background-color: #ccc;
+    font-size: x-large;
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -93,7 +113,7 @@ textarea {
     height: 100px;
 }
 
-.new-comment {
+#new-comment {
     margin-top: 5px;
     margin-bottom: 5px;
     height: max-content;

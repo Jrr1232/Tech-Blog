@@ -1,5 +1,3 @@
-alert('js running')
-console.log('js runnig')
 var acc = document.getElementsByClassName("accordion");
 var i;
 

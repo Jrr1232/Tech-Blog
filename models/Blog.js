@@ -30,7 +30,7 @@ Blog.init(
             allowNull: false,
         },
         datePosted: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
             defaultValue: DataTypes.NOW
 

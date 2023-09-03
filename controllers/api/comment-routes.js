@@ -1,21 +1,19 @@
 const router = require('express').Router();
 const { Comment, User } = require('../../models');
-
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.findAll({
+        const userData = await User.findOne({
             where: { username: req.session.username }
         });
-        // this map should return me my userID which is a FK for my comment and will associate it with a User
-        // I can then use my user to gain access to my comments and its text {{comment.text}}
-        const usersID = userData.map((user) => user.get({ plain: true }));
-        console.log(usersID)
+        if (!userData) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        const userPlainObject = userData.get({ plain: true });
+        console.log(userPlainObject)
         console.log(req.session.username)
-
         const commentData = await Comment.create({
-            user_id: usersID,
+            user_id: userPlainObject.id,
             text: req.body.comment
-
         });
         res.status(200).json(commentData)
         console.log('post route')
@@ -24,5 +22,4 @@ router.post('/', async (req, res) => {
         console.log(req.body)
     }
 });
-
 module.exports = router;

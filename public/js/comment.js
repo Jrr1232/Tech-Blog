@@ -2,8 +2,8 @@
 const postNewComment = async (event) => {
     event.preventDefault();
     let comment = "";
-    const textarea = document.querySelector('#new-comment');
-    console.log(textarea)
+    const textarea = document.querySelector('.new-comment');
+    console.log(textarea.value)
     if (textarea) {
         comment = textarea.value;
     }

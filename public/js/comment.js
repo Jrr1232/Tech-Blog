@@ -13,6 +13,7 @@ const postNewComment = async (event) => {
             method: "POST",
             body: JSON.stringify({
                 comment,
+
             }),
             headers: { "Content-Type": "application/json" }
         });
@@ -28,7 +29,10 @@ const postNewComment = async (event) => {
         alert("An error occurred while posting the comment.");
     }
 };
-const commentBtn = document.querySelector(".add-comment-btn")
-if (commentBtn) {
-    commentBtn.addEventListener('click', postNewComment)
-}
+
+
+document.addEventListener('click', function (event) {
+    if (event.target && event.target.classList.contains('add-comment-btn')) {
+        postNewComment(event);
+    }
+});

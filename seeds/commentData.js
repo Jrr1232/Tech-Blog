@@ -5,11 +5,13 @@ const commentData =
         {
             "id": 1,
             "user_id": 2,
+            "blog_id": 2,
             "text": "This is my added comment.",
         },
         {
             "id": 2,
             "user_id": 2,
+            "blog_id": 2,
             "text": "My second comment.",
         }
 

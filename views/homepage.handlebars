@@ -9,7 +9,17 @@
     </div>
 </button>
 <div class="panel">
-    <div id="comments-panel">Comments{{comments.text}}</div>
+    <div id="comments-panel">
+        <ul id="comments-list">
+            {{#each comments}}
+            <li>-{{this}}</li>
+            <br />
+            {{/each}}
+            <div id="user-comment">
+                -{{user.username}},{{datePosted}}
+            </div>
+        </ul>
+    </div>
     <form class="new-comment-form">
         <textarea class="new-comment" maxlength="500"></textarea>
         <button class="add-comment-btn" type="submit">Leave a Comment</button>

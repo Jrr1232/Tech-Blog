@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require("../utils/auth");
 // GET all blogs for home
 router.get('/', async (req, res) => {
@@ -9,18 +9,30 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                 },
+                {
+                    model: Comment,
+                },
             ],
         });
 
-        const blogs = blogData.map((blog) => blog.get({ plain: true }));
-        console.log(blogs)
+        const blogs = blogData.map((blog) => {
+            const plainBlog = blog.get({ plain: true });
+
+            // Extract the comment texts from comment objects
+            plainBlog.comments = plainBlog.comments.map((comment) => comment.text);
+
+            return plainBlog;
+        });
+
+        ; // Now, 'blogs' contains comment texts as strings
+
         res.render('homepage', { blogs, logged_in: req.session.logged_in });
-    }
-    catch (err) {
-        console.log(err)
-        res.status(500).json(err)
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
     }
 });
+
 
 
 router.get('/login', (req, res) => {

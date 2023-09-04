@@ -113,6 +113,20 @@ textarea {
     height: 100px;
 }
 
+#comments-list {
+    display: inline-block;
+    color: black;
+}
+
+#comments-list li {
+    margin-bottom: 20px;
+
+}
+
+#user-comment {
+    margin-left: 25px;
+}
+
 #new-comment {
     margin-top: 5px;
     margin-bottom: 5px;

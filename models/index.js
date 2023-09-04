@@ -5,7 +5,8 @@ const Comment = require('./Comment')
 
 Blog.belongsTo(User, { foreignKey: 'user_id' }); // This associates each Blog with a User
 User.hasMany(Blog, { foreignKey: 'user_id' })
-Comment.belongsTo(User, { foreignKey: 'user_id' }); // This associates each Blog with a User
-
+Blog.hasMany(Comment, { foreignKey: 'blog_id' });
+Comment.belongsTo(Blog, { foreignKey: 'blog_id' });
 
 module.exports = { Blog, User, Comment };
+ 

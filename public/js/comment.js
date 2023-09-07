@@ -3,16 +3,19 @@ const postNewComment = async (event) => {
     event.preventDefault();
     let comment = "";
     const textarea = document.querySelector('.new-comment');
-    console.log(textarea.value)
+    const blogId = event.target.getAttribute('data-blogid');
     if (textarea) {
         comment = textarea.value;
     }
-
+    console.log(comment)
+    console.log(blogId)
     try {
         const response = await fetch(`/api/comment`, {
             method: "POST",
             body: JSON.stringify({
                 comment,
+                blogId
+
 
             }),
             headers: { "Content-Type": "application/json" }

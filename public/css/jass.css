@@ -44,6 +44,7 @@ ul li a {
     font-family: 'Courier New', Courier, monospace;
     color: rgb(14, 69, 69);
 
+
 }
 
 .blogs {
@@ -77,7 +78,7 @@ ul li a {
 
 #blog-text {
     font-family: monospace;
-    border-top: 2px solid brown;
+    border-top: 2px solid rgb(40, 23, 6);
     margin-top: 50px;
     height: 100px;
 }
@@ -104,7 +105,7 @@ ul li a {
 }
 
 #posted-date {
-    margin-left: 1500px;
+    margin-left: 500px;
 }
 
 textarea {
@@ -171,4 +172,61 @@ textarea {
 input {
     height: 30px;
     margin-bottom: 20px;
+}
+
+#new-post-btn {
+    margin-top: 600px;
+    margin-left: 500px;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+#blog-form {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#new-title {
+    width: 300px;
+    height: 20px;
+    margin-bottom: 10px;
+    border-color: aqua;
+}
+
+#new-content {
+    height: 70px;
+    width: 450px;
+    border-color: aqua;
+
+}
+
+#create-post {
+    width: 450px;
+    margin-bottom: 10px;
+    font-size: large;
+    font-family: monospace;
+    border-radius: 10px;
+    background-color: #444;
+    color: white;
+
+
+}
+
+
+#create-a-post {
+
+    background-color: rgb(40, 23, 6);
+    color: rgb(174, 198, 188);
+    height: 50px;
+    font-family: monospace;
+    font-size: larger;
+}
+
+#new-blog-form {
+    display: none;
+    margin-top: 20px;
+    border: 2px solid rgb(40, 23, 6);
+    width: fit-content;
+    margin-left: 300px;
 }

@@ -4,7 +4,7 @@ const blogData =
     [
         {
             "id": 1,
-            "user_id": 2,
+            "user_id": 1,
             "username": "junior@hotmail.com",
             "text": "Love this App",
             "title": "App Ratings",

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="css/jass.css">
-{{#each blogs}}
 
+{{#each blogs}}
+{{comment.text}}
 <button class="accordion">
     <div id="title">{{title}}</div>
     <div id="posted-date">Posted By: {{user.username}} on {{datePosted}}</div>
@@ -9,24 +10,26 @@
     </div>
 </button>
 <div class="panel">
-    <div id="comments-panel">
-        <ul id="comments-list">
-            {{#each comments}}
-            <li>-{{this}}</li>
-            <br />
-            {{/each}}
-            <div id="user-comment">
-                -{{user.username}},{{datePosted}}
-            </div>
-        </ul>
-    </div>
+    <ul id="comments-list">
+        {{#each comments}}
+        <li>-{{this}}</li>
+        <br />
+        {{/each}}
+        - Posted by: {{user.username}}
+
+
+    </ul>
     <form class="new-comment-form">
         <textarea class="new-comment" maxlength="500"></textarea>
-        <button class="add-comment-btn" type="submit">Leave a Comment</button>
+        <button class="add-comment-btn" data-blogid="{{id}}" type="submit">Leave a Comment</button>
     </form>
+</div>
+<div>
+    {{comment}}
 </div>
 
 {{/each}}
+
 {{#unless logged_in}}
 <div class="login-card">
     <h2 class="login-title">Signup</h2>

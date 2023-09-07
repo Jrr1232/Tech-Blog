@@ -4,13 +4,13 @@ const commentData =
     [
         {
             "id": 1,
-            "user_id": 1,
+            "username": "junior",
             "blog_id": 1,
             "text": "This is my added comment.",
         },
         {
             "id": 2,
-            "user_id": 1,
+            "username": "alex",
             "blog_id": 2,
             "text": "My second comment.",
         }

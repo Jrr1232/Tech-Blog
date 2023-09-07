@@ -23,10 +23,11 @@ router.get('/', async (req, res) => {
 
             return plainBlog;
         });
+        console.log(blogs)
 
-        ; // Now, 'blogs' contains comment texts as strings
 
-        res.render('homepage', { blogs, logged_in: req.session.logged_in });
+
+        res.render('homepage', { blogs, logged_in: req.session.logged_in, commentUsername });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

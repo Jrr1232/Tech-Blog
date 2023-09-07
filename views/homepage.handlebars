@@ -5,30 +5,36 @@
 <button class="accordion">
     <div id="title">{{title}}</div>
     <div id="posted-date">Posted By: {{user.username}} on {{datePosted}}</div>
+</button>
+<div class="panel">
     <div id="blog-text">
         <p>{{text}}</p>
     </div>
-</button>
-<div class="panel">
-    <ul id="comments-list">
-        {{#each comments}}
-        <li>-{{this}}</li>
-        <br />
-        {{/each}}
-        - Posted by: {{user.username}}
-
-
-    </ul>
     <form class="new-comment-form">
         <textarea class="new-comment" maxlength="500"></textarea>
         <button class="add-comment-btn" data-blogid="{{id}}" type="submit">Leave a Comment</button>
     </form>
 </div>
 <div>
-    {{comment}}
+    <ul class="comments-list">
+
+        {{#each comments}}
+        <div class="comment">
+            <div class="comment-header"></div>
+            <li>-{{this}}</li>
+            <br />
+        </div>
+        Posted By: {{commentUsername}}
+        {{/each}}
+        {{commentUsername}}
+
+</div>
+
+</ul>
 </div>
 
 {{/each}}
+{{commentUsername}}
 
 {{#unless logged_in}}
 <div class="login-card">

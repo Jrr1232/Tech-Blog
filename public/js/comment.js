@@ -7,8 +7,7 @@ const postNewComment = async (event) => {
     if (textarea) {
         comment = textarea.value;
     }
-    console.log(comment)
-    console.log(blogId)
+
     try {
         const response = await fetch(`/api/comment`, {
             method: "POST",

@@ -278,7 +278,7 @@ input {
     margin-left: 300px;
 }
 
-#update-blog-form {
+.update-blog-form {
     display: none;
     margin-top: 20px;
     border: 2px solid rgb(40, 23, 6);

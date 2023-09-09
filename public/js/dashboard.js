@@ -51,6 +51,7 @@ const createNewBlog = async (event) => {
     }
 
 }
+console.log
 
 const editBlogForm = async (event) => {
     const form = document.getElementById('update-blog-form');
@@ -66,6 +67,7 @@ const editBlogForm = async (event) => {
         // If it's hidden, show it
         form.style.display = 'block';
     }
+    return blogId
 
 };
 
@@ -93,11 +95,12 @@ const deleteBlog = async event => {
 }
 
 
-const updateButton = async (event, clickedButton) => {
+const updateButton = async (event) => {
+    const clickedButton = event.target;
     const blogId = clickedButton.getAttribute('data-blogid');
     const title = document.getElementById('updated-title');
     const text = document.getElementById('updated-content');
-
+    alert(blogId)
     // You need to check if 'textarea' is defined before using it
     if (text) {
         alert(text.value);

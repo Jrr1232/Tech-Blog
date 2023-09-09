@@ -18,16 +18,26 @@ router.get('/', async (req, res) => {
         const blogs = blogData.map((blog) => {
             const plainBlog = blog.get({ plain: true });
 
-            // Extract the comment texts from comment objects
-            plainBlog.comments = plainBlog.comments.map((comment) => comment.text);
+            // Extract comment data including usernames and texts
+            plainBlog.comments = plainBlog.comments.map((comment) => ({
+                username: comment.username,
+                text: comment.text,
+            }));
 
             return plainBlog;
         });
-        console.log(blogs)
 
+        const commentData = await Comment.findAll({})
 
+        const comments = commentData.map((comment) => {
+            const plainComment = comment.get({ plain: true });
 
-        res.render('homepage', { blogs, logged_in: req.session.logged_in, commentUsername });
+            // Extract the comment texts from comment objects
+
+            return plainComment;
+        });
+
+        res.render('homepage', { blogs, logged_in: req.session.logged_in, comments });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

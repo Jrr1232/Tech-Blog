@@ -110,6 +110,32 @@ ul li a {
 
 }
 
+.dashboard-btn {
+    background-color: gainsboro;
+    width: 1000px;
+    border: 2px solid;
+    border-radius: 20px;
+    text-align: left;
+
+}
+
+.dashboard-btn li {
+    display: flex;
+    margin-top: 20px;
+
+
+}
+
+.dashboard-title {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-date {
+    margin-left: 700px;
+    margin-bottom: 10px;
+}
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .accordion:hover {
@@ -245,6 +271,14 @@ input {
 }
 
 #new-blog-form {
+    display: none;
+    margin-top: 20px;
+    border: 2px solid rgb(40, 23, 6);
+    width: fit-content;
+    margin-left: 300px;
+}
+
+#update-blog-form {
     display: none;
     margin-top: 20px;
     border: 2px solid rgb(40, 23, 6);

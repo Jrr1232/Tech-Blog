@@ -11,7 +11,7 @@
         <p>{{text}}</p>
     </div>
     <form class="new-comment-form">
-        <textarea class="new-comment" maxlength="500"></textarea>
+        <textarea class="new-comment" maxlength="500" data-blogid="{{id}}"></textarea>
         <button class="add-comment-btn" data-blogid="{{id}}" type="submit">Leave a Comment</button>
     </form>
 </div>
@@ -21,20 +21,19 @@
         {{#each comments}}
         <div class="comment">
             <div class="comment-header"></div>
-            <li>-{{this}}</li>
+            <li>-{{text}}</li>
             <br />
-        </div>
-        Posted By: {{commentUsername}}
-        {{/each}}
-        {{commentUsername}}
+            Posted By: {{username}}
 
+        </div>
+        {{/each}}
+        {{username}}
 </div>
 
 </ul>
 </div>
 
 {{/each}}
-{{commentUsername}}
 
 {{#unless logged_in}}
 <div class="login-card">

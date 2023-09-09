@@ -1,3 +1,34 @@
+{{#each blogs}}
+
+<ul class="dashboard-blogs">
+    <li>
+        <button class="dashboard-blogs" data-blogid="{{id}}">
+            <div class="dashboard-title">{{title}} </div>
+            <div class="dashboard-date">{{datePosted}}</div>
+        </button>
+    </li>
+</ul>
+{{/each}}
+
+<div id="update-blog-form">
+    <div id="create-a-post">Edit Blog</div>
+    <form id="blog-form">
+        Title
+        <br />
+        <textarea id="updated-title" maxlength="500"></textarea>
+        <br />
+        Content
+        <br />
+        <textarea id="updated-content" maxlength="500"></textarea>
+        <br />
+        <button id="update-post" type="submit">Update Post</button>
+        <button id="delete-post" type="submit">Delete</button>
+
+    </form>
+</div>
+
+
+
 <div id="new-blog-form">
     <div id="create-a-post">Create a Post</div>
     <form id="blog-form">

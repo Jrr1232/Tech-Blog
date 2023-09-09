@@ -8,7 +8,7 @@ const blogData =
             "username": "junior@hotmail.com",
             "text": "Love this App",
             "title": "App Ratings",
-            "datePosted": "5/8/2022",
+            "datePosted": "2022-01-19",
         },
         {
             "id": 2,
@@ -16,7 +16,7 @@ const blogData =
             "username": "jeju@gmail.com",
             "text": "I love the Sims",
             "title": "Game Reviews",
-            "datePosted": "5/7/2023",
+            "datePosted": "2023-05-23",
         }
 
     ]

@@ -1,7 +1,7 @@
 {{#each blogs}}
 <ul class="dashboard-blogs">
     <li>
-        <button class="dashboard-blogs" data-blogid="{{id}}">
+        <button class="dashboard-blogs" data-blogid={{id}}>
             <div class="dashboard-title">{{title}}</div>
             <div class="dashboard-date">{{datePosted}}</div>
         </button>
@@ -18,7 +18,7 @@
         <br />
         <textarea class="updated-content" maxlength="500"></textarea>
         <br />
-        <button class="update-post" type="submit" data-blogid="{{id}}">Update Post</button>
+        <button class="update-post" type="submit" data-blogid={{id}}>Update Post</button>
         <button class="delete-post" type="submit">Delete</button>
     </form>
 </div>

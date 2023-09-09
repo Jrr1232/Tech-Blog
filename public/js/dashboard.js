@@ -51,14 +51,13 @@ const createNewBlog = async (event) => {
     }
 
 }
-console.log
+
 
 const editBlogForm = async (event) => {
     const form = document.querySelector('.update-blog-form');
     const clickedButton = event.target;
     const blogId = clickedButton.getAttribute('data-blogid');
 
-    alert(blogId)
     // Check if the form is currently visible (display is 'block')
     if (form.style.display === 'block') {
         // If it's visible, hide it
@@ -70,7 +69,6 @@ const editBlogForm = async (event) => {
     return blogId
 
 };
-
 
 
 const deleteBlog = async event => {

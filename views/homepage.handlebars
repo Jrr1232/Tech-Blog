@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="css/jass.css">
 
 {{#each blogs}}
-{{comment.text}}
 <button class="accordion">
     <div id="title">{{title}}</div>
     <div id="posted-date">Posted By: {{user.username}} on {{datePosted}}</div>
@@ -11,8 +10,8 @@
         <p>{{text}}</p>
     </div>
     <form class="new-comment-form">
-        <textarea class="new-comment" maxlength="500" data-blogid="{{id}}"></textarea>
-        <button class="add-comment-btn" data-blogid="{{id}}" type="submit">Leave a Comment</button>
+        <textarea class="new-comment" maxlength="500" data-blogid={{id}}></textarea>
+        <button class="add-comment-btn" data-blogid={{id}} type="submit">Leave a Comment</button>
     </form>
 </div>
 <div>

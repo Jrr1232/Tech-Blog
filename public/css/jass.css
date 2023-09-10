@@ -27,7 +27,6 @@ ul li {
     margin: 0;
     margin-top: 5px;
     padding: 0;
-
     text-align: right;
     margin-left: 30px;
 
@@ -136,14 +135,12 @@ ul li a {
     margin-bottom: 10px;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .accordion:hover {
     background-color: #ccc;
     font-size: x-large;
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .panel {
     padding: 0 18px;
     background-color: white;
@@ -221,6 +218,7 @@ input {
     margin-bottom: 20px;
 }
 
+
 #new-post-btn {
     margin-top: 600px;
     margin-left: 500px;
@@ -279,9 +277,21 @@ input {
 }
 
 .blog-form {
-    /* display: none; */
+    text-align: left;
+
+}
+
+.updated-title {
+    height: 30px;
+    width: 400px;
+}
+
+
+.update-blog-form {
+
+    display: none;
     margin-top: 20px;
     border: 2px solid rgb(40, 23, 6);
     width: fit-content;
-    margin-left: 300px;
+    margin-left: 200px;
 }

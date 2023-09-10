@@ -16,15 +16,10 @@ const postNewBlogForm = async (event) => {
 
 };
 const createNewBlog = async (event) => {
-
-
     let title = document.querySelector('#new-title');
-
     title = title.value
-    console.log(title)
     let text = document.querySelector('#new-content');
     text = text.value
-    console.log(text)
     try {
         const response = await fetch('/api/dashboard', {
             method: 'POST',
@@ -54,10 +49,9 @@ const createNewBlog = async (event) => {
 
 
 const editBlogForm = async (event) => {
-    const form = document.querySelector('.blog-form');
+    const form = document.querySelector('.update-blog-form');
     const clickedButton = event.target;
     const blogId = clickedButton.getAttribute('data-blogid');
-    alert(blogId)
     // Check if the form is currently visible (display is 'block')
     if (form.style.display === 'block') {
         // If it's visible, hide it
@@ -71,10 +65,7 @@ const editBlogForm = async (event) => {
 };
 
 
-const deleteBlog = async event => {
-    const clickedButton = event.target;
-    const blogId = clickedButton.getAttribute('data-blogid');
-
+const deleteBlog = async blogId => {
     try {
         const response = await fetch(`/api/dashboard/${blogId}`, {
             method: 'DELETE',
@@ -93,14 +84,10 @@ const deleteBlog = async event => {
 }
 
 
-const updateButton = async (event) => {
-    const clickedButton = event.target;
-    const blogId = clickedButton.getAttribute('data-blogid');
+
+const updateBlog = async blogId => {
     const title = document.querySelector('.updated-title');
     const text = document.querySelector('.updated-content');
-    alert(blogId)
-    console.log(blogId)
-
     try {
         const response = await fetch(`/api/dashboard/${blogId}`, {
             method: 'PUT',
@@ -128,8 +115,19 @@ const updateButton = async (event) => {
     }
 }
 
+const updateButtons = document.querySelectorAll('.update-post');
 
-// document.querySelector('.dashboard-blogs').addEventListener('click', editBlogForm)
+const deleteButtons = document.querySelectorAll('.delete-post');
+
+updateButtons.forEach(button => {
+    button.addEventListener('click', updateBlog);
+});
+
+deleteButtons.forEach(button => {
+    button.addEventListener('click', deleteBlog);
+});
+
+
 document.getElementById('new-post-btn').addEventListener('click', postNewBlogForm);
 document.getElementById('create-post').addEventListener('click', createNewBlog);
 document.addEventListener('click', function (event) {
@@ -137,6 +135,3 @@ document.addEventListener('click', function (event) {
         editBlogForm(event);
     }
 });
-
-document.querySelector('.update-post').addEventListener('click', updateButton)
-

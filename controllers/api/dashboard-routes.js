@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findAll();
 
@@ -36,7 +36,7 @@ router.post('/', withAuth, async (req, res) => {
     res.render('dashboard')
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
 
         await Blog.update(
@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     // Looks for the books based on isbn given in the request parameters and deletes the instance from the database
     Blog.destroy({
         where: {

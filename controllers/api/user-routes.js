@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         });
 
 
-        
+
 
         req.session.save(() => {
             req.session.logged_in = true;
@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
         res.status(500).json(err);
     }
 });
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
     if (req.session.logged_in) {
         console.log(req.session);
         req.session.destroy(() => {

@@ -1,14 +1,15 @@
 {{#each blogs}}
 <ul class="dashboard-blogs">
     <li>
+
         <button class="dashboard-blogs" data-blogid={{id}}>
             <div class="dashboard-title">{{title}}</div>
             <div class="dashboard-date">{{datePosted}}</div>
         </button>
     </li>
+
 </ul>
 <div class="update-blog-form">
-    <div class="create-a-post">Edit Blog</div>
     <form class="blog-form">
         Title
         <br />
@@ -22,6 +23,7 @@
         <button class="delete-post" type="submit">Delete</button>
     </form>
 </div>
+
 {{/each}}
 
 

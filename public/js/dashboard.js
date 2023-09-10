@@ -1,5 +1,5 @@
 const postNewBlogForm = async (event) => {
-    const form = document.querySelector('.new-blog-form');
+    const form = document.getElementById('new-blog-form');
 
     // Check if the form is currently visible (display is 'block')
     if (form.style.display === 'block') {
@@ -54,10 +54,10 @@ const createNewBlog = async (event) => {
 
 
 const editBlogForm = async (event) => {
-    const form = document.querySelector('.update-blog-form');
+    const form = document.querySelector('.blog-form');
     const clickedButton = event.target;
     const blogId = clickedButton.getAttribute('data-blogid');
-
+    alert(blogId)
     // Check if the form is currently visible (display is 'block')
     if (form.style.display === 'block') {
         // If it's visible, hide it
@@ -99,6 +99,7 @@ const updateButton = async (event) => {
     const title = document.querySelector('.updated-title');
     const text = document.querySelector('.updated-content');
     alert(blogId)
+    console.log(blogId)
 
     try {
         const response = await fetch(`/api/dashboard/${blogId}`, {
@@ -123,11 +124,12 @@ const updateButton = async (event) => {
         }
     } catch (err) {
         console.error('Fetch error:', err);
+        console.log(err)
     }
 }
 
 
-// document.querySelector('.dashboard-blogs').addEventListener('click', editBlog)
+// document.querySelector('.dashboard-blogs').addEventListener('click', editBlogForm)
 document.getElementById('new-post-btn').addEventListener('click', postNewBlogForm);
 document.getElementById('create-post').addEventListener('click', createNewBlog);
 document.addEventListener('click', function (event) {

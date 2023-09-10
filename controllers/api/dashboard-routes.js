@@ -33,7 +33,7 @@ router.post('/', withAuth, async (req, res) => {
         console.log(err)
 
     }
-    res.render('dashboard', { newBlogData })
+    res.render('dashboard')
 })
 
 router.put('/:id', async (req, res) => {

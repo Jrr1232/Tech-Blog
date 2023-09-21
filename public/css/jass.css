@@ -286,6 +286,12 @@ input {
     width: 400px;
 }
 
+#logged-in {
+    margin-left: 70px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium
+}
+
 
 .update-blog-form {
 

@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 router.get('/', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findAll();
@@ -12,7 +14,7 @@ router.get('/', withAuth, async (req, res) => {
         });
         console.log(blogs)
 
-        res.render('dashboard', { blogs, logged_in: req.session.logged_in });
+        res.render('dashboard', { blogs, logged_in: req.session.logged_in, username: capitalizeFirstLetter(req.session.username) });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

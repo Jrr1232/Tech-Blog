@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 require("dotenv").config();
 let sequelize = "";
+// new jawsDB
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize("mysql://d1vp3zq1wm2vvo3u:u6tdp7oyz7had3mn@wb39lt71kvkgdmw0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/q5sfkt1m8sszorv4");
 } else {

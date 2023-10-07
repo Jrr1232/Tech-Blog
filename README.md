@@ -13,8 +13,8 @@
 
 Try out this amazing new Tech Blog site. Sign up, or login by clicking on the 'login' navigation tab, and start creating blogs by naviating to your dashboard. You can also delete, and update blogs from your dashboard by clicking existing blogs. <br/>
 You can view all blogs by navigating to the homepage tab, and add comments by clicking each blog. To logout click on the logout tab. 
-
-
+Live on :
+https://techblogger1304-ba9d7a32b48f.herokuapp.com/
 
 
 ## ⚠️Table of Contents 
